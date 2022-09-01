@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Docker Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/Student/Resources/Challenge 1/content-api/package.json",
+                "localRoot": "${workspaceFolder}/Student/Resources/Challenge 1/content-api"
+            }
+        }
+    ]
+}
