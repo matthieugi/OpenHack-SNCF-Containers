@@ -1,143 +1,67 @@
-<!-- {% comment %} -->
-# What The Hack - Repo
+# What The Hack - Intro To Kubernetes
+## Introduction
+This intro level hack will help you get hands-on experience with Docker, Kubernetes and the Azure Kubernetes Service (AKS) on Microsoft Azure. Kubernetes has quickly gone from being the shiny new kid on the block to the defacto way to deploy and orchestrate containerized applications.
 
-Welcome to the What The Hack repo on GitHub. This repo contains Coach content designed for people planning to host a What The Hack event with students in an organization. 
+This hack starts off by covering containers, what problems they solve, and why Kubernetes is needed to help orchestrate them.  You will learn all of the Kubernetes jargon (pods, services, and deployments, oh my!).  By the end, you should have a good understanding of what Kubernetes is and be familiar with how to run it on Azure.
 
-If you are an organization that is interested in attending or hosting a What The Hack event, please visit the [What The Hack website](https://aka.ms/wth) at: **https://aka.ms/wth**
+This hack includes a optional [lecture presentation](Coach/Lectures.pptx) that features short presentations to introduce key topics associated with each challenge. It is recommended that the host present each short presentation before attendees kick off that challenge.
 
-**If you are a student attending a What The Hack event, please go to the [What The Hack website](https://aka.ms/wth).**
+## Learning Objectives
+In this hack you will solve a common challenge for companies migrating to the cloud. You will take a simple multi-tiered web app, containerize it, and deploy it to an AKS cluster. Once the application is in AKS, you will learn how to tweak all the knobs and levers to scale, manage and monitor it.
 
-![What The Hack Website](/assets/images/wth-logo.png)
-<!-- {% endcomment %} -->
+1. Containerize an application
+1. Deploy a Kubernetes cluster in Azure and deploy applications to it.
+1. Understand key Kubernetes management areas: scalability, upgrades and rollbacks, storage, networking, package management and monitoring
 
-# What is What The Hack?
+## Challenges
+- Challenge 0: **[Pre-requisites - Ready, Set, GO!](Student/00-prereqs.md)**
+   - Prepare your workstation to work with Azure, Docker containers, and AKS
+- Challenge 1: **[Got Containers?](Student/01-containers.md)**
+   - Package the "FabMedical" app into a Docker container and run it locally.
+- Challenge 2: **[The Azure Container Registry](Student/02-acr.md)**
+   - Deploy an Azure Container Registry, secure it and publish your container.
+- Challenge 3: **[Introduction To Kubernetes](Student/03-k8sintro.md)**
+   - Install the Kubernetes CLI tool, deploy an AKS cluster in Azure, and verify it is running.
+- Challenge 4: **[Your First Deployment](Student/04-k8sdeployment.md)**
+   - Pods, Services, Deployments: Getting your YAML on! Deploy the "FabMedical" app to your AKS cluster. 
+- Challenge 5: **[Scaling and High Availability](Student/05-scaling.md)**
+   - Flex Kubernetes' muscles by scaling pods, and then nodes. Observe how Kubernetes responds to resource limits.
+- Challenge 6: **[Deploy MongoDB to AKS](Student/06-deploymongo.md)**
+   - Deploy MongoDB to AKS from a public container registry.
+- Challenge 7: **[Updates and Rollbacks](Student/07-updaterollback.md)**
+   - Deploy v2 of FabMedical to AKS via rolling updates, roll it back, then deploy it again using the blue/green deployment methodology.
+- Challenge 8: **[Storage](Student/08-storage.md)**
+   - Delete the MongoDB you created earlier and observe what happens when you don't have persistent storage. Fix it!
+- Challenge 9: **[Helm](Student/09-helm.md)**
+   - Install Helm tools, customize a sample Helm package to deploy FabMedical, publish the Helm package to Azure Container Registry and use the Helm package to redeploy FabMedical to AKS.
+- Challenge 10: **[Networking](Student/10-networking.md)**
+   - Explore integrating DNS with Kubernetes services and explore different ways of routing traffic to FabMedical by configuring an Ingress Controller.
+- Challenge 11: **[Operations and Monitoring](Student/11-opsmonitoring.md)**
+   - Explore the logs provided by Kubernetes using the Kubernetes CLI, configure Azure Monitor and build a dashboard that monitors your AKS cluster
+   
+## Prerequisites
 
-"What the Hack" is a set of challenge based hackathons that can be hosted in-person or virtually via Microsoft Teams.
+- Access to an Azure subscription with Owner access
+   - If you don't have one, [Sign Up for Azure HERE](https://azure.microsoft.com/en-us/free/)
+- [**Windows Subsystem for Linux (Windows 10-only)**](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+- [**Azure CLI**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+   - (Windows-only) Install Azure CLI on Windows Subsystem for Linux
+   - Update to the latest
+   - Must be at least version 2.7.x
+- Alternatively, you can use the [**Azure Cloud Shell**](https://shell.azure.com/)
+- [**Visual Studio Code**](https://code.visualstudio.com/)
 
-Attendees work in squads of 3 to 5 people to solve a series of technical challenges for a given technology or solution scenario. Challenges describe high-level tasks and goals to be accomplished. Challenges are not step-by-step labs.
+## Repository Contents
+- `../Coach/Guides`
+  - [Lecture presentation](Coach/Lectures.pptx) with short presentations to introduce each challenge.
+- `../Coach/Solutions`
+   - Example solutions to the challenges (If you're a student, don't cheat yourself out of an education!)
+- `../Student/Resources`
+   - FabMedial app code and sample templates to aid with challenges
 
-What The Hack is designed to be a collaborative learning experience.  Attendees "learn from" and "share with" each other. Without step-by-step instructions given for the challenges, attendees have to "figure it out" together as a team.  This results in greater knowledge retention for the attendees. 
-
-The attendee squads are not alone in solving the challenges. Coaches work with each squad to provide guidance for, but not answers to, the challenges.  The coaches may also provide lectures and demos to introduce the challenges, as well as review challenge solutions throughout the event.
-
-# How to Host a What The Hack
-
-Would you like to host a What The Hack for your organization? The WTH format and content has been designed for hosting a hack with groups of 5 to 50 people. We welcome anyone to use the content here to host their own WTH event!
-
-See our complete guide on ["How To Host A Hack"](/000-HowToHack/WTH-HowToHostAHack.md).
-
-# How to Contribute to What The Hack
-
-What The Hack is community driven. Here are our core principles:
-- Anyone can [contribute a new hack](./CONTRIBUTING.md).
-- Anyone can use the content to [host their own WTH event](./000-HowToHack/WTH-HowToHostAHack.md).
-- Anyone can modify or update a hack as needed.
-  - Contributing updates back via a [pull request](./CONTRIBUTING.md) is encouraged.
-- The content can always be shared with hack attendees **(Only do this after the event is over!)**
-
-Would you like to contribute to What The Hack?  We welcome new hacks and updates to existing hacks!  We have developed a process for doing this.  
-
-See our [What The Hack Contribution Guide](./CONTRIBUTING.md) to learn about the contribution and review process.
-
-# How to Author a What The Hack
-
-What makes a good hack? We have a guide that helps answer that question!
-
-Hacks can focus on a single technology or focus on a solution scenario that features multiple technologies working together to solve a business problem.
-
-Read our [What The Hack Author's Guide](/000-HowToHack/WTH-HowToAuthorAHack.md) for details on how to author a hack. The author's guide contains a set of markdown template files that help you quickly create new hack content that is consistent with the WTH format.
-
-# The What The Hack Collection
-
-Here is the current list of What The Hack hackathons available in this repository:
-
-## Infrastructure
-- [Intro To Kubernetes](/001-IntroToKubernetes/README.md)
-- [Advanced Kubernetes](/023-AdvancedKubernetes/README.md)
-- [AKS Enterprise-Grade](/039-AKSEnterpriseGrade/README.md)
-- [Azure Arc Enabled Kubernetes](/026-ArcEnabledKubernetes/readme.md)
-- [Azure Arc enabled servers](/025-ArcEnabledServers/readme.md)
-- [Infrastructure As Code: Bicep](/045-InfraAsCode-Bicep/README.md)
-- [Infrastructure As Code: ARM & DSC](/011-InfraAsCode-ARM-DSC/readme.md)
-- [Infrastructure As Code: Terraform](/012-InfraAsCode-Terraform/Student/readme.md)
-- [Infrastructure As Code: Ansible](/013-InfraAsCode-Ansible/Student/readme.md)
-- [Azure Front Door](/017-FrontDoor/README.md)
-- [Advanced Networking](/028-AdvancedNetworking/README.md)
-- [Azure Networking with Hub & Spoke](/035-HubAndSpoke/README.md)
-- [Using BGP Networking for Hybrid Connectivity](/036-BGP/README.md)
-- [Azure Virtual WAN](/041-VirtualWAN/README.md)
-- [Azure Governance](/022-AzureGovernance/README.md)
-- [Linux Fundamentals](/020-LinuxFundamentals/README.md)
-- [Azure Virtual Desktop](/037-AzureVirtualDesktop/README.md)
-- [SAP On Azure](/042-SAPOnAzure/README.md)
-
-## Application Development
-- [Java on Azure App Service](/040-JavaOnAppService/README.md)
-- [Rock, Paper, Scissors, Boom!](/005-RockPaperScissorsBoom/README.md)
-- [App Modernization](/006-AppModernization/README.md)
-- [Microservices In Azure](/009-MicroservicesInAzure/README.md)
-- [Serverless](/015-Serverless/README.md)
-- [Migrating Applications To The Cloud](/016-AppMigration/README.md)
-- [IdentityForApps](/021-IdentityForApps/README.md)
-- [Linux Fundamentals](/020-LinuxFundamentals/README.md)
-- [FHIR Powered Healthcare](/027-FHIRPoweredHealthcare/readme.md)
-- [Traffic Control with Dapr](/047-TrafficControlWithDapr/README.md)
-- [Azure Integration Services - API Management with Function Apps](/050-AIS-APIManagementwithFunctions/README.md)
-- [SAP on Azure: Application Modernization](/052-SAPAppModernization/README.md)
-
-## Operations
-- [Azure Monitoring](/007-AzureMonitoring/README.md)
-- [DevOps with GitHub](/031-DevOpsWithGitHub/readme.md)
-- [DevOps with GitHub Actions](/044-DevOpswithGitHubActions/README.md)
-- [Azure DevOps](/010-AzureDevOps/README.md)
-- [Open Source DevOps](/014-OSSDevOps/readme.md)
-- [MLOps from Scratch](/032-MLOpsFromScratch/README.md)
-- [Linux Fundamentals](/020-LinuxFundamentals/README.md)
-- [Data Governance with Microsoft Purview](/051-MicrosoftPurview/README.md)
-
-## Data & AI
-- [Data Governance with Microsoft Purview](/051-MicrosoftPurview/README.md)
-- [SQL Modernization and Migration](/043-SQLModernization/README.md)
-- [OSS Database Migration](/033-OSSDatabaseMigration/README.md)
-- [MLOps from Scratch](/032-MLOpsFromScratch/README.md)
-- [IoT Process Control at the Edge](/029-IoTEdge/README.md)
-- [BI 2 AI](/018-BI2AI/README.md)
-- [This Old Data Warehouse](/019-ThisOldDataWarehouse/README.md)
-- [Modern Data Warehouse - Covid 19](/038-MDWCovid19/README.md)
-- [Do You Even Synapse](/024-DoYouEvenSynapse/README.md)
-- [Incremental Synapse Pipelines](/048-IncrementalSynapsePipelines/README.md)
-- [Synapse Dedicated SQL Pool - Performance Best Practices](/049-SQLDedicatedPoolPerf/README.md)
-- [Conversational AI](/030-ConversationalAI/README.md)
-- [Databricks/Intro to ML](/008-DatabricksIntroML/README.md)
-- [Intro To Azure AI](/002-IntroToAzureAI/README.md) - ARCHIVED
-- [Driving Miss Data](/003-DrivingMissData/README.md) - ARCHIVED
-
-## Microsoft Teams Platform
-- [Microsoft Teams: Make It Real](/034-MicrosoftTeams-MakeItReal/README.md)
-
-## Smart Edge & Devices
-
-- [IoT Process Control at the Edge](/029-IoTEdge/README.md)
-- [Azure Arc enabled Kubernetes](/026-ArcEnabledKubernetes/readme.md)
-- [Azure Arc enabled servers](/025-ArcEnabledServers/readme.md)
-
-## Networking
-- [Advanced Networking](/028-AdvancedNetworking/README.md)
-- [Azure Networking with Hub & Spoke](/035-HubAndSpoke/README.md)
-- [Using BGP Networking for Hybrid Connectivity](/036-BGP/README.md)
-- [Azure Virtual WAN](/041-VirtualWAN/README.md)
-- [Azure Front Door](/017-FrontDoor/README.md)
-
-## SAP on Azure
-- [SAP on Azure](/042-SAPOnAzure/README.md)
-- [SAP on Azure: Application Modernization](/052-SAPAppModernization/README.md)
-
-## Archived
-
-These hacks have been archived due to obsolesence or dependencies on sample code or data that is no longer available. If you are interested in updating these hacks, [contributions are welcome](CONTRIBUTING.md)! Please consider contributing to keep What The Hack up to date.
-
-- [Intro To Azure AI](/002-IntroToAzureAI/README.md)
-- [Driving Miss Data](/003-DrivingMissData/README.md)
-
-# License
-This repository is licensed under MIT license. More info can be found [here](https://github.com/Microsoft/WhatTheHack/blob/master/LICENSE).
+## Contributors
+- Peter Laudati
+- Gino Filicetti
+- Israel Ekpo
+- Sowmyan Soman Chullikkattil
+- Larry Claman
