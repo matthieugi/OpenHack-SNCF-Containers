@@ -35,8 +35,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: sncfml.azurecr.io/content-api:${{ github.sha }}
-          file: Student/Resources/Challenge 1/api/Dockerfile
+          tags: sncfml.azurecr.io/api:${{ github.sha }}
+          file: Student/Resources/Challenge 1/content-api/Dockerfile
           context: Student/Resources/Challenge 1/content-api/
 
 
