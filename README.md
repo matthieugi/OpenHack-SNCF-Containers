@@ -20,9 +20,9 @@ In this hack you will solve a common challenge for companies migrating to the cl
    - Package the "FabMedical" app into a Docker container and run it locally.
 - Challenge 2: **[The Azure Container Registry](Student/02-acr.md)**
    - Deploy an Azure Container Registry, secure it and publish your container.
-- Challenge 3: **[Introduction To Kubernetes](Student/03-k8sintro.md)**
-   - Install the Kubernetes CLI tool, deploy an AKS cluster in Azure, and verify it is running.
-- Challenge 4: **[Your First Deployment](Student/04-k8sdeployment.md)**
+- Challenge 3: **[Introduction to Azure Container Apps](Student/03-acaintro_CLI.md)**
+   - Deploy the "FabMedical" app into an Azure Container Apps Environment and play with the revisions mechanism.
+<!-- - Challenge 4: **[Your First Deployment](Student/04-k8sdeployment.md)**
    - Pods, Services, Deployments: Getting your YAML on! Deploy the "FabMedical" app to your AKS cluster. 
 - Challenge 5: **[Scaling and High Availability](Student/05-scaling.md)**
    - Flex Kubernetes' muscles by scaling pods, and then nodes. Observe how Kubernetes responds to resource limits.
@@ -37,7 +37,7 @@ In this hack you will solve a common challenge for companies migrating to the cl
 - Challenge 10: **[Networking](Student/10-networking.md)**
    - Explore integrating DNS with Kubernetes services and explore different ways of routing traffic to FabMedical by configuring an Ingress Controller.
 - Challenge 11: **[Operations and Monitoring](Student/11-opsmonitoring.md)**
-   - Explore the logs provided by Kubernetes using the Kubernetes CLI, configure Azure Monitor and build a dashboard that monitors your AKS cluster
+   - Explore the logs provided by Kubernetes using the Kubernetes CLI, configure Azure Monitor and build a dashboard that monitors your AKS cluster -->
    
 ## Prerequisites
 
