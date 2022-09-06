@@ -11,4 +11,4 @@ In this set of challenges, you will be using an application called _FabMedical_,
 ### [Containers Path A](01a-containers.md)
 ### [Containers Path B](02b-acr.md)
 ### [Containers Path C](02c-acr.md)
-### [Containers Path D](03-k8sintro.md)
+### [Containers Path D](03-acaintro_CLI.md)
