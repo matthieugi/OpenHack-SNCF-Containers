@@ -55,6 +55,9 @@ In this challenge we'll be creating an Azure Linux VM, building, and running the
 
 ## Learning Resources
 
+- <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/container-docker-introduction/docker-defined>
+- <https://docs.microsoft.com/en-us/training/modules/intro-to-docker-containers/2-what-is-docker>
 - <https://nodejs.org/en/docs/guides/nodejs-docker-webapp/>
 - <https://buddy.works/guides/how-dockerize-node-application>
 - <https://www.cuelogic.com/blog/why-and-how-to-containerize-modern-nodejs-applications>
+- <https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/>
